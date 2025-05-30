@@ -18,23 +18,23 @@ churn = df['churn'] #we will need this later
 
 #Coloumns to retain
 no_encoding_scaling_needed_coloumns = ['credit_card', 'active_member']
-numerical_coloumns = ['credit_score', 'age', 'tenure', 'balance', 'num_of_products', 'estimated_salary']
+numerical_coloumns = ['credit_score', 'age', 'tenure', 'balance', 'products_number', 'estimated_salary']
 categorical_coloumns = ['country', 'gender']
 
 #No encoding needed coloumn
 no_encoding_needed_coloumns = df[no_encoding_scaling_needed_coloumns]
 
 # Handle missing values for numerical columns
-numreical_data = df[numerical_coloumns]
+numerical_data = df[numerical_coloumns]
 imputer_num = SimpleImputer(strategy='mean')
-numreical_data = imputer_num.fit_transform(numreical_data)
+numreical_data = imputer_num.fit_transform(numerical_data)
 numerical_df = pd.DataFrame(numreical_data, columns=numerical_coloumns)
 
 #Encode categorical coloumns
 categorical_data = df[categorical_coloumns]
 
 # One-hot encoding for categorical columns
-encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
+encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
 categorical_data = encoder.fit_transform(categorical_data)
 
 # Convert the encoded array to a DataFrame
@@ -44,7 +44,7 @@ categorical_df = pd.DataFrame(categorical_data, columns=encoder.get_feature_name
 combined_data = pd.concat([numerical_df, categorical_df], axis=1)
 pd.set_option('display.max_columns', None)
 print(combined_data.head())
-pd.reset_options('display.max_columns')
+pd.reset_option('display.max_columns')
 
 #Standardize the data
 scaler = StandardScaler()
