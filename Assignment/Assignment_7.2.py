@@ -20,21 +20,21 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 
-df = pd.read_csv("/content/titanic.csv")
+df = pd.read_csv("Advanced_Analytics_07/Assignment/Titanic-Dataset.csv")
 
 # Drop rows with missing values
 df = df.dropna()
 print(df.shape)
-churn = df['survived']  # need this later
+churn = df['Survived']  # need this later
 
-df=df.drop(columns='embarked')
-df=df.drop(columns='deck')
+df=df.drop(columns='Embarked')
+# df=df.drop(columns='deck')
 
 
 # Columns to retain
 
-numerical_cols = ['pclass','age','sibsp','parch','fare']
-categorical_cols = ['gender']
+numerical_cols = ['Pclass','Age','SibSp','Parch','Fare']
+categorical_cols = ['Sex']
 
 
 # Handle missing values for numerical columns
