@@ -71,6 +71,7 @@ print("\nPredicted vs Actual Values:\n", comparison_df.head(20))  # Display the 
 
 # Print Confusion Matrix
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nAccuracy:", metrics.accuracy_score(y_test, y_pred))
 
 #Save the tree as DOT file
 with open('bank_tree.dot', 'w') as f:
