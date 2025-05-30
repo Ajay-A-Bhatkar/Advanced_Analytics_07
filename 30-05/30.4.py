@@ -60,4 +60,7 @@ model = LogisticRegression(max_iter=500)
 #Perform K-fold cross-validation
 cv_scores = cross_val_score(model, X, y, cv=kf, scoring='accuracy')
 
+print(f"Accuracy Score for each fold: {cv_scores}")
 print(f"Average accuracy over {kf.n_splits} folds: {np.mean(cv_scores):.3f}")
+print("\n---------------------------------------------------------\n")
+
