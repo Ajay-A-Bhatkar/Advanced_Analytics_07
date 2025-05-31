@@ -6,6 +6,13 @@ Assignment 7 (Decision Tree, PCA) - 30/05/2025
 2. Create a decision tree on titanic dataset
 
 3. Do PCA on Diabetes Dataset and implement the components to create a decision tree.
+
+4. Find a dataset from kaggle to perform bootstrapping and k-fold cross validation.
+a) First build a loogistic regression model and predict. Find the accuracy of the model.
+b) Repeat with bootstrapping and 3) k-fold cross validation.
+
+5. Find a dataset from kaggle containing imbalanced lables. Use SMOTE to perform oversampling. 
+Compare model accuracy before and after SMOTE 
 '''
 # 1. Do PCA on Titanic Dataset
 import pandas as pd

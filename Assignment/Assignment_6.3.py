@@ -25,7 +25,7 @@ df = pd.read_csv('Assignment/loan_data.csv')
 # Use LabelEncoder to encode the purpose column
 label_encoder = LabelEncoder()
 df['purpose'] = label_encoder.fit_transform(df['purpose'])
-print("----------------------------------------")
+print("-----------------------------------------------")
 
 #Select credit.policy
 X = df[['credit.policy', 'int.rate', 'installment', 'log.annual.inc', 
